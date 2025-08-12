@@ -1,4 +1,4 @@
-This repo is used to create an Azure-based backend for secure storage and multi-user capabilities of a Terraform state file.
+This is used to create an Azure-based backend for secure storage and multi-user capabilities of a Terraform state file.
 In a few steps, you can construct the backend infrastructure, create a secure method of access to the storage infrastructure, and use the infrastructure as a remote backend for Terraform.
 
 ### Create Backend Infrastructure:
