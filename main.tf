@@ -12,8 +12,14 @@ resource "azurerm_resource_group" "rg" {
 
 resource "azurerm_storage_account" "storage" {
     name = var.store_name
-    resource_group_name = var.rg.name
+    resource_group_name = var.rg_name
     location = var.region
     account_tier = "Standard"
-    account_replication_type = 
+    account_replication_type = "LRS"
+}
+
+resource "azurerm_storage_container" "container" {
+    name = var.cont_name
+    storage_account_name = var.store_name
+    container_access_type = "private"
 }
