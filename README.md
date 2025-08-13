@@ -32,6 +32,7 @@ export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --v
       storage_account_name = "<storage_account_name>"
       container_name       = "tfstate"
       key                  = "terraform.tfstate"
+      use_azuread_auth     = true
   }
 ```
 Replace the `<storage_account_name>` with the name outputed from the initial infrastructure configuration.
