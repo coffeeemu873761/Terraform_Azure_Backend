@@ -35,3 +35,5 @@ export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --v
   }
 ```
 Replace the `<storage_account_name>` with the name outputed from the initial infrastructure configuration.
+
+2. Run `terraform init' again to reinitialize the directory.
