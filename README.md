@@ -7,22 +7,6 @@ In a few steps, you can construct the backend infrastructure, create a secure me
 2. Run `terraform apply` to apply the plan and create the infrastructure to store the state remotely.
 3. Save the Storage Account Name that is outputed when the infrastructure is configured. This will be used when setting up the backend block.
 
-
-### Create and Securely Store Storage Access Key
-1. Run the following commands in the Azure CLI:
-
-```
-ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv)
-
-export ARM_ACCESS_KEY=$ACCOUNT_KEY
-```
-
-2. Then run this command in Bash:
-
-```
-export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name myKeyVault --query value -o tsv)
-```
-
 ### Configure Terraform backend state: 
 1. Add the backend section to the Terraform configuration block
 
